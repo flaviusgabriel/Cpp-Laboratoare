@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    char s[256],*p;
+    cout<<"Introduceti o fraza: \n";
+    cin.get(s,256);
+    for(p=strtok(s," ");p;p=strtok(NULL," "))
+    {
+        cout<<p<<endl;
+    }
+    return 0;
+}
