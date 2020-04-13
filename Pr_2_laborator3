@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[]="Vlad",a[256];
+    int k=0;
+    do
+    {
+        cin>>a;
+        k++;
+    }while(strcmp(s,a)!=0);
+    cout<<k;
+    return 0;
+}
