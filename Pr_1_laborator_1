@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, m, a[50][50], i, j, k, b=0, x;
+    cout<<"Dati numarul de linii: ";
+    cin>>n;
+    cout<<"\n------------------------\n";
+    cout<<"Dati numarul de coloane: ";
+    cin>>m;
+    cout<<"\n------------------------\n";
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            cout<<"a["<<i<<"]["<<j<<"]= ";
+            cin>>a[i][j];
+        }
+    }
+    cout<<"\n------------------------\n";
+    cout<<"Matricea este:"<<endl;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            cout<<a[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+    cout<<"\n------------------------\n";
+
+    cout<<"Cautati un numar in matrice: ";
+    cin>>x;
+    i=j=0;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            if(a[i][j]==x)
+            {
+                 cout<<"A fost gasit pe pozitia: "<<i<<" "<<j<<endl;
+                 break;
+            }
+
+        }
+    }
+    if(i==n && j==m)
+        cout<<"Nu a fost gasit in tablou.";
+    return 0;
+}
