@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    /*srand((int)time(0));
+	int i = 0;
+	while(i++ < 6)
+    {
+		int r = (rand() % 49) + 1;
+		cout << r << " ";
+	}*/
+	int v[6];
+
+	srand((int)time(0));
+
+	for(int i = 0; i < 6; i++)
+
+	v[i] = (rand() % 49) + 1;
+
+	cout << "Here are the unsorted numbers: " << endl;
+
+    for(int i = 0; i < 6; i++)
+
+    cout << v[i] << " ";
+
+    cout << "\n";
+
+    cout<<"\n-------------------\n";
+
+    /*for(int i = 0 ; i < 5 ; i ++)
+        for(int j = i + 1 ; j < 6 ; j ++)
+            if(v[i] > v[j])
+            {
+                int aux = v[i];
+                v[i] = v[j];
+                v[j] = aux;
+            }*/
+    for(int i = 0 ; i < 5 ; i ++)
+    {
+        int p = i;
+        for(int j = i + 1 ; j < 6 ; j ++)
+            if(v[j] < v[p])
+                p= j;
+        int aux = v[i];
+        v[i] = v[p];
+        v[p] = aux;
+    }
+    for(int i = 0 ; i < 6 ; i ++)
+        cout<<v[i]<<" ";
+    return 0;
+}
