@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int n, k, a[50];
+
+void afis(int n)
+{
+    int i;
+    k++;
+    for(i=1;i<=n;i++)
+        cout<<a[i]<<" ";
+    cout<<endl;
+}
+
+void back(int i, int t)
+{
+    int j;
+    if (t==n)
+        afis(i-1);
+    else
+        for(j=1;j<=n-t;j++)
+            if (j>=a[i-1])
+            {
+              a[i]=j;
+              back(i+1, t+j);
+            }
+}
+
+int main()
+{
+  cin>>n;
+  k=0;
+  back(1,0);
+  cout<<"Sunt "<<k<<" solutii";
+}
