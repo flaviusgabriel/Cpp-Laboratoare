@@ -1,0 +1,84 @@
+#include <bits/stdc++.h>
+#define max 100
+
+using namespace std;
+
+int n;
+
+struct Abonat{
+    char name[50];
+    char adress[50];
+    char phone[15];
+    int val;
+}a[max];
+
+void citire()
+{
+    int i;
+    cout<<"How many people you want to register?: ";
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        cout<<"Name: ";
+        cin>>a[i].name;
+        cout<<"Adress: ";
+        cin>>a[i].adress;
+        cout<<"Phone nr.: ";
+        cin>>a[i].phone;
+        cout<<"Bill value: ";
+        cin>>a[i].val;
+        cout<<"\n-----------------\n";
+    }
+}
+
+void sortare()
+{
+    int i,j,ok;
+    struct Abonat aux;
+    /*for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i].val<a[j].val)
+            {
+                aux=a[i].val;
+                a[i].val=a[j].val;
+                a[j].val=aux;
+            }
+        }
+    }*/
+    do
+    {
+        ok=0;
+        for(i=0;i<n-1;i++)
+            for(j=i+1;j<n;j++)
+            {
+                if(a[i].val < a[j].val)
+                {
+                    aux=a[i];
+                    a[i]=a[j];
+                    a[j]=aux;
+                }
+            }
+    }while(ok==1);
+    for(i=0;i<n;i++)
+        cout<<"Bill: "<<" "<<a[i].val<<" "<<"Client: "<<" "<<a[i].name<<endl;
+    cout<<"\n-----------------------\n";
+}
+
+void afis_firsr_3_clients()
+{
+    int i;
+    for(i=0;i<3;i++)
+    {
+        cout<<"Bill: "<<" "<<a[i].val<<" "<<"Client: "<<" "<<a[i].name<<endl;
+    }
+}
+
+int main()
+{
+    citire();
+    sortare();
+    afis_firsr_3_clients();
+    return 0;
+}
