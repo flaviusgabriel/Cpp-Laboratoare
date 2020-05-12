@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int Suma (int n, int a[10])
+{
+	if(n==0) return 0;
+	else return(a[n]+Suma(n-1,a));
+}
+
+int  main()
+{
+    int a[10], n;
+	cout<<"Introduceti nr de elemente: ";
+	cin>>n;
+	for (int i=1; i<=n; i++)
+	{
+		cin>>a[i];
+	}
+	cout<<Suma(n,a);
+}
